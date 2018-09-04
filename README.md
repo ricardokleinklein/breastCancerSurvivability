@@ -3,13 +3,23 @@
 This repository contains the required programme to replicate my MSc. thesis, *"Stage-specific breast cancer survivability models over time"*, 
 in which we explore how stage-specific models are the preferable option when implementing a machine learning-based solution to the problem of predicting breast cancer survivability.
 
-## Use of this package
+## Installation
 
-The *Eclipse* environment is required for a smooth running of the algorithms. Previously to importing the project, you should be sure that *Weka* API is well integrated in your environment. 
+This repository is thought as an *Eclipse* project, and thus thought to be run in that environment. The recommended steps if you want to execute the experiments are as follows:
 
-Once you are absolutely sure *Weka* is up and running, proceed to import this repository through *Eclipse*. If you don't know how to do it, please follow [these instructions](http://imtilab.blogspot.com/2016/10/how-to-pushupload-eclipse-project-to.html) to learn how to create, commit and push your project to *Github*.
+- Download *Eclipse*: [official site](https://www.eclipse.org/), and install the *Java* version.
+- Download the Weka package that fits your OS from [here](https://www.cs.waikato.ac.nz/ml/weka/downloading.html). Open the package and look for the main folder *weka*, which will have the form `weka-version`. Within it there should be a file named `weka.jar`. That's the file we are interested in.
+- Clone this repo:
 
-You should be able to run the experiments with no trouble whatsoever. Please notice that for the sake of debugging and clearance during the development of this project, code is not optimal, and therefore manual modifications on what algorithms to run and hyperparameters must be done in advance.
+```
+git clone https://github.com/ricardokleinklein/breastCancerSurvivability.git
+```
+
+- Import from *Eclipse* the directory *breastCancerSurvivability* that you have cloned in the previous step.
+- `Project Properties --> Java Build Path --> Libraries --> Classpath --> Add External Jar`. Browse to the `weka.jar`mentioned before. Remove the link that may appear. It is linked to my local path and won't work on your machine.
+- Open `Dataset.java` and within the `main` method change the path to the dataset. It is a modified version of the [SEER dataset](https://seer.cancer.gov/data/)), so I cannot give access to it. 
+
+*Note:* `resources.zip` contains a draft version of my MSc. Thesis about this set of experiments, but it is not required for anything else. Don't worry about it ;)
 
 ## Why stage-specific?
 
