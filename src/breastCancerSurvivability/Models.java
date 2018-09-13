@@ -17,9 +17,11 @@ import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.trees.ADTree;
 import weka.classifiers.trees.adtree.*;
 import weka.classifiers.functions.Logistic;
+import weka.classifiers.AbstractClassifier.*;
 
 import breastCancerSurvivability.Dataset;
 import breastCancerSurvivability.Hyperparams;
+
 
 public class Models {
 	
@@ -137,7 +139,7 @@ public class Models {
 		file.close();
 	}
 	
-	private static void aging(CostSensitiveClassifier cla, Instances data,
+	private static void ageing(CostSensitiveClassifier cla, Instances data,
 			String filename, int[] window, int firstYear, int lastYear) throws Exception {
 		/** Train a model over a window of years and evaluate its performance
 		 * in previous as well as in following years.
@@ -186,7 +188,7 @@ public class Models {
 		int[] window = {3, 3, 4, 4};
 		// String filename2 = "bayesPrediction_yearly.txt";
 		// predictionPerYear(meta, data, filename2, nFolds, window, 2004, 2009);
-		// aging(meta, data, "bayesAging.txt", window, 1973, 2009);
+		// ageing(meta, data, "bayesAging.txt", window, 1973, 2009);
 		
 		/*
 		// B) Logistic
